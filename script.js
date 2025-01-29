@@ -78,12 +78,41 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// Efecto de navbar al hacer scroll
+// Botones flotantes
+const whatsappButton = document.querySelector('.whatsapp-button');
+const scrollTopButton = document.querySelector('.scroll-top-button');
+
+// Mostrar/ocultar botones al hacer scroll
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
-    if (window.scrollY > 50) {
+    const scrollPosition = window.scrollY;
+    
+    // Navbar efecto
+    if (scrollPosition > 50) {
         header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
     } else {
         header.style.backgroundColor = 'white';
     }
+
+    // Mostrar/ocultar botón de WhatsApp
+    if (scrollPosition > 300) {
+        whatsappButton.classList.add('visible');
+    } else {
+        whatsappButton.classList.remove('visible');
+    }
+
+    // Mostrar/ocultar botón de subir
+    if (scrollPosition > 500) {
+        scrollTopButton.classList.add('visible');
+    } else {
+        scrollTopButton.classList.remove('visible');
+    }
+});
+
+// Funcionalidad del botón de subir
+scrollTopButton.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

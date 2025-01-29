@@ -97,6 +97,101 @@ nav {
     color: var(--primary-color);
 }
 
+/* Botones flotantes */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.whatsapp-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 90px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-top-button:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+.scroll-top-button.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Animaciones del título */
+.animate-title {
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.animate-subtitle {
+    animation: fadeInUp 1.2s ease-out 0.3s backwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Secciones */
 section {
     padding: 5rem 1rem;
@@ -269,5 +364,22 @@ footer {
     
     .form-group {
         grid-template-columns: 1fr;
+    }
+    
+    .whatsapp-button {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .scroll-top-button {
+        bottom: 20px;
+        right: 20px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .scroll-top-button.visible {
+        opacity: 1;
+        visibility: visible;
     }
 }
