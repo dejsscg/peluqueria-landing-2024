@@ -220,6 +220,12 @@ section h2 {
     border-color: var(--primary-color);
 }
 
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 /* Footer */
 footer {
     background: var(--primary-color);
@@ -259,5 +265,9 @@ footer {
     
     section {
         padding: 3rem 1rem;
+    }
+    
+    .form-group {
+        grid-template-columns: 1fr;
     }
 }

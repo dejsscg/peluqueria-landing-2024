@@ -81,17 +81,33 @@
                 <p><i class="fas fa-phone"></i> (123) 456-7890</p>
                 <p><i class="fas fa-clock"></i> Lun - Sab: 9:00 - 19:00</p>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Email" required>
-                <input type="tel" placeholder="Teléfono" required>
-                <select required>
+            <form class="contact-form" id="reservationForm">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <select id="servicio" name="servicio" required>
                     <option value="">Selecciona un servicio</option>
                     <option value="corte">Corte de Cabello</option>
                     <option value="color">Coloración</option>
                     <option value="tratamiento">Tratamiento</option>
                     <option value="peinado">Peinado</option>
                 </select>
+                <div class="form-group">
+                    <input type="date" id="fecha" name="fecha" required>
+                    <select id="hora" name="hora" required>
+                        <option value="">Selecciona una hora</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                    </select>
+                </div>
                 <button type="submit" class="cta-button">Reservar Cita</button>
             </form>
         </div>
