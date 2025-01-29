@@ -1,9 +1,10 @@
 /* Variables y reset */
 :root {
-    --primary-color: #d4af37;
-    --secondary-color: #2c3e50;
+    --primary-color: #DC1766;     /* Magenta fuerte */
+    --secondary-color: #F5BFC6;   /* Rosa suave */
+    --accent-color: #FFD700;      /* Amarillo dorado */
     --text-color: #333;
-    --light-bg: #f9f9f9;
+    --light-bg: #FFF5F6;         /* Fondo rosa muy suave */
 }
 
 * {
@@ -44,7 +45,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--secondary-color);
+    color: var(--text-color);
     text-decoration: none;
     margin-left: 2rem;
     transition: color 0.3s;
@@ -87,11 +88,13 @@ nav {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
 }
 
 .cta-button:hover {
-    background: #c19b2e;
+    background: transparent;
+    color: var(--primary-color);
 }
 
 /* Secciones */
@@ -126,10 +129,12 @@ section h2 {
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    border: 1px solid var(--secondary-color);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
+    border-color: var(--primary-color);
 }
 
 .service-card i {
@@ -198,18 +203,26 @@ section h2 {
     background: white;
     border-radius: 10px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    border: 1px solid var(--secondary-color);
 }
 
 .contact-form input,
 .contact-form select {
     padding: 0.8rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--secondary-color);
     border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 /* Footer */
 footer {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     padding: 2rem;
     text-align: center;
@@ -227,7 +240,7 @@ footer {
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
 
 /* Responsive */
