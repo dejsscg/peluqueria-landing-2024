@@ -78,6 +78,34 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
+// Menú hamburguesa
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+const menuIcon = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.close-icon');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    if (navLinks.classList.contains('active')) {
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+    } else {
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    }
+});
+
+// Cerrar menú al hacer click en un enlace
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+        menuIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
+    });
+});
+
 // Botones flotantes
 const whatsappButton = document.querySelector('.whatsapp-button');
 const scrollTopButton = document.querySelector('.scroll-top-button');
