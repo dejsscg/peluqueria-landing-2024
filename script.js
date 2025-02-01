@@ -88,6 +88,7 @@ menuToggle.addEventListener('click', () => {
     console.log('Botón de menú clicado');
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    console.log('Estado de navLinks:', navLinks.classList.contains('active')); // Log para verificar el estado
     if (navLinks.classList.contains('active')) {
         menuIcon.style.display = 'none';
         closeIcon.style.display = 'block';

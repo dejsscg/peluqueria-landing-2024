@@ -47,6 +47,11 @@ nav {
     color: var(--primary-color);
 }
 
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
 .nav-links a {
     color: var(--text-color);
     text-decoration: none;
@@ -56,6 +61,25 @@ nav {
 
 .nav-links a:hover {
     color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #FFF;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: max-height 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 /* Hero Section */
@@ -389,10 +413,6 @@ section h2 {
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
     .hero h1 {
         font-size: 2.5rem;
     }
