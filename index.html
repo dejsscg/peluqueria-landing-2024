@@ -4,71 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elegance Hair Salon - Tu Belleza, Nuestra Pasión</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Elegance</div>
-            <button class="menu-toggle" aria-label="Menú">
-                <i class="fas fa-bars menu-icon"></i>
-                <i class="fas fa-times close-icon" style="display:none;"></i>
-            </button>
-            <div class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#galeria">Galería</a>
-                <a href="#contacto">Contacto</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <a href="#" class="navbar__logo">Elegance</a>
+        <button class="navbar__hamburger" aria-label="Menú">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar__menu">
+            <li><a href="#inicio" class="navbar__link">Inicio</a></li>
+            <li><a href="#servicios" class="navbar__link">Servicios</a></li>
+            <li><a href="#galeria" class="navbar__link">Galería</a></li>
+            <li><a href="#contacto" class="navbar__link">Contacto</a></li>
+        </ul>
+    </nav>
 
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1 style="font-family: 'Dancing Script', cursive;">Elegance Hair Salon</h1>
-            <p style="font-family: 'Dancing Script', cursive;">Tu belleza en manos expertas</p>
+    <section class="hero" id="inicio">
+        <div class="hero__content">
+            <h1 class="hero__title">Elegance Hair Salon</h1>
+            <p class="hero__subtitle">Tu Belleza, Nuestra Pasión</p>
+            <a href="#contacto" class="hero__cta">Reserva tu cita</a>
         </div>
-        <style>
-            .hero {
-                height: 100vh;
-                background-color: #E7D283; /* Color que combina */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-            }
-        </style>
     </section>
 
-    <section id="servicios" class="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-cut"></i>
-                <h3>Corte de Cabello</h3>
-                <p>Cortes modernos y clásicos para todos los estilos</p>
+    <section class="services" id="servicios">
+        <div class="services__grid">
+            <div class="services__item">
+                <i class="fas fa-cut services__icon"></i>
+                <h3 class="services__title">Cortes de Cabello</h3>
+                <p class="services__description">Cortes modernos y clásicos para todos los estilos</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-paint-brush"></i>
-                <h3>Coloración</h3>
-                <p>Tintes profesionales y técnicas modernas</p>
+            <div class="services__item">
+                <i class="fas fa-paint-brush services__icon"></i>
+                <h3 class="services__title">Coloración</h3>
+                <p class="services__description">Tintes y mechas personalizadas</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-spa"></i>
-                <h3>Tratamientos</h3>
-                <p>Hidratación y cuidado para tu cabello</p>
+            <div class="services__item">
+                <i class="fas fa-spa services__icon"></i>
+                <h3 class="services__title">Tratamientos</h3>
+                <p class="services__description">Hidratación y reparación capilar</p>
             </div>
-            <div class="service-card">
-                <i class="fas fa-female"></i>
-                <h3>Peinados</h3>
-                <p>Peinados para eventos especiales</p>
+            <div class="services__item">
+                <i class="fas fa-female services__icon"></i>
+                <h3 class="services__title">Peinados</h3>
+                <p class="services__description">Peinados para eventos especiales</p>
             </div>
         </div>
     </section>
 
-    <section id="galeria" class="gallery">
+    <section class="gallery" id="galeria">
         <h2>Galería de Trabajos</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
@@ -86,9 +73,9 @@
         </div>
     </section>
 
-    <section id="contacto" class="contact">
-        <div class="contact-container">
-            <h2 class="contact-title">¡Tu belleza merece un trato especial!</h2>
+    <section class="contact" id="contacto">
+        <div class="contact__container">
+            <h2>Contacto</h2>
             <a href="https://wa.me/123456789" class="whatsapp-button-large">
                 <i class="fab fa-whatsapp"></i>
                 Agenda tu cita
@@ -96,15 +83,13 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p>&copy; 2025 Elegance Hair Salon. Todos los derechos reservados.</p>
+    <footer class="footer">
+        <div class="footer__social">
+            <a href="#" class="footer__link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="footer__link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer__link"><i class="fab fa-whatsapp"></i></a>
         </div>
+        <p class="footer__copyright">&copy; 2025 Elegance Hair Salon. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Botón WhatsApp -->

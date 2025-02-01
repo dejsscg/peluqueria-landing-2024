@@ -78,33 +78,54 @@ form.addEventListener('submit', async function(e) {
     }
 });
 
-// Menú hamburguesa
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-const menuIcon = document.querySelector('.menu-icon');
-const closeIcon = document.querySelector('.close-icon');
+document.addEventListener('DOMContentLoaded', () => {
+    // Menú hamburguesa
+    const hamburger = document.querySelector('.navbar__hamburger');
+    const menu = document.querySelector('.navbar__menu');
+    
+    hamburger.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
 
-menuToggle.addEventListener('click', () => {
-    console.log('Botón de menú clicado');
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-    console.log('Estado de navLinks:', navLinks.classList.contains('active')); // Log para verificar el estado
-    if (navLinks.classList.contains('active')) {
-        menuIcon.style.display = 'none';
-        closeIcon.style.display = 'block';
-    } else {
-        menuIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
-    }
-});
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('.navbar__link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+    });
 
-// Cerrar menú al hacer clic en un enlace
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        menuToggle.classList.remove('active');
-        menuIcon.style.display = 'block';
-        closeIcon.style.display = 'none';
+    // Scroll suave para los enlaces de navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Animación de aparición al hacer scroll
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    // Observar elementos que queremos animar
+    document.querySelectorAll('.services__item, .hero__content').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
     });
 });
 

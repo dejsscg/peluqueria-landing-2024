@@ -1,0 +1,49 @@
+// Media Queries
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+// Flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Transitions
+@mixin transition($property: all) {
+  transition: $property $transition-speed $transition-ease;
+}
+
+// Button styles
+@mixin button-base {
+  padding: $spacing-small $spacing-medium;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  @include transition;
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
