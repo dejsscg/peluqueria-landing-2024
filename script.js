@@ -85,6 +85,7 @@ const menuIcon = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
 
 menuToggle.addEventListener('click', () => {
+    console.log('Botón de menú clicado'); // Log para depuración
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
     if (navLinks.classList.contains('active')) {
@@ -96,7 +97,7 @@ menuToggle.addEventListener('click', () => {
     }
 });
 
-// Cerrar menú al hacer click en un enlace
+// Cerrar menú al hacer clic en un enlace
 navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
