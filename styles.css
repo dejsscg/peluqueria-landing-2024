@@ -372,19 +372,29 @@ section h2 {
 
 /* Estilos del menú hamburguesa */
 .menu-toggle {
-    display: none;
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.menu-toggle .menu-icon,
+.menu-toggle .close-icon {
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1000;
-        position: relative;
-        width: 40px;
-        height: 40px;
     }
 }
 
