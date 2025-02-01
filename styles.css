@@ -1,9 +1,9 @@
 /* Variables y reset */
 :root {
-    --primary-color: #C1A57B;     /* Magenta fuerte */
-    --secondary-color: #30271C;   /* Rosa suave */
-    --accent-color: #FFD700;      /* Amarillo dorado */
-    --text-color: #333;
+    --primary-color: #FFCDB2;     /* Magenta fuerte */
+    --secondary-color: #FFB4A2;   /* Rosa suave */
+    --accent-color: #E5989B;      /* Amarillo dorado */
+    --text-color: #B5828C;
     --light-bg: #FFF5F6;         /* Fondo rosa muy suave */
     --background-color: #FFF5F6;
 }
