@@ -85,7 +85,7 @@ const menuIcon = document.querySelector('.menu-icon');
 const closeIcon = document.querySelector('.close-icon');
 
 menuToggle.addEventListener('click', () => {
-    console.log('Botón de menú clicado'); // Log para depuración
+    console.log('Botón de menú clicado');
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
     if (navLinks.classList.contains('active')) {
