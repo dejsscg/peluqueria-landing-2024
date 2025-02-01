@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -43,7 +43,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dancing Script', cursive;
     color: var(--primary-color);
 }
 
@@ -283,7 +283,7 @@ section h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     line-height: 1.4;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Dancing Script', cursive;
 }
 
 .whatsapp-button-large {
