@@ -1,7 +1,7 @@
 /* Variables y reset */
 :root {
-    --primary-color: #DC1766;     /* Magenta fuerte */
-    --secondary-color: #F5BFC6;   /* Rosa suave */
+    --primary-color: #C1A57B;     /* Magenta fuerte */
+    --secondary-color: #30271C;   /* Rosa suave */
     --accent-color: #FFD700;      /* Amarillo dorado */
     --text-color: #333;
     --light-bg: #FFF5F6;         /* Fondo rosa muy suave */
@@ -15,9 +15,10 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 /* Header y Navegación */
@@ -42,6 +43,7 @@ nav {
 .logo {
     font-size: 1.8rem;
     font-weight: bold;
+    font-family: 'Playfair Display', serif;
     color: var(--primary-color);
 }
 
