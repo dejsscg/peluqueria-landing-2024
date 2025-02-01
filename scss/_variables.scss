@@ -1,14 +1,27 @@
 // Colors
-$primary-color: #333;
-$secondary-color: #666;
-$accent-color: #ff4081;
-$background-color: #fff;
-$text-color: #333;
+$primary-color: #2C3E50;    // Azul oscuro elegante
+$secondary-color: #E74C3C;  // Rojo suave
+$accent-color: #F1C40F;     // Dorado
+$background-color: #FFFFFF;
+$text-color: #2C3E50;
+$light-gray: #ECF0F1;
+$dark-gray: #34495E;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $primary-color 0%, $dark-gray 100%);
+$gradient-accent: linear-gradient(135deg, $secondary-color 0%, adjust-hue($secondary-color, 25deg) 100%);
 
 // Typography
 $font-family-primary: 'Poppins', sans-serif;
+$font-family-secondary: 'Playfair Display', serif;
 $font-size-base: 16px;
-$line-height-base: 1.5;
+$line-height-base: 1.6;
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
 
 // Breakpoints
 $mobile: 576px;
@@ -18,10 +31,28 @@ $large-desktop: 1200px;
 
 // Spacing
 $spacing-unit: 8px;
-$spacing-small: $spacing-unit;
-$spacing-medium: $spacing-unit * 2;
-$spacing-large: $spacing-unit * 3;
+$spacing-xxs: $spacing-unit * 0.5;  // 4px
+$spacing-xs: $spacing-unit;         // 8px
+$spacing-sm: $spacing-unit * 2;     // 16px
+$spacing-md: $spacing-unit * 3;     // 24px
+$spacing-lg: $spacing-unit * 4;     // 32px
+$spacing-xl: $spacing-unit * 6;     // 48px
+$spacing-xxl: $spacing-unit * 8;    // 64px
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
 
 // Transitions
+$transition-speed-fast: 0.2s;
 $transition-speed: 0.3s;
-$transition-ease: ease-in-out;
+$transition-speed-slow: 0.5s;
+$transition-ease: cubic-bezier(0.4, 0, 0.2, 1);

@@ -30,20 +30,198 @@
   align-items: center;
 }
 
-// Transitions
-@mixin transition($property: all) {
-  transition: $property $transition-speed $transition-ease;
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
-// Button styles
+// Grid
+@mixin grid-auto-fit($min-size: 250px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-size, 1fr));
+  gap: $spacing-md;
+}
+
+// Animations
+@mixin fade-in($duration: $transition-speed) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  animation: fadeIn $duration $transition-ease forwards;
+}
+
+@mixin slide-in($direction: 'left', $duration: $transition-speed) {
+  $transform-start: translateX(-100%);
+  
+  @if $direction == 'right' {
+    $transform-start: translateX(100%);
+  } @else if $direction == 'up' {
+    $transform-start: translateY(100%);
+  } @else if $direction == 'down' {
+    $transform-start: translateY(-100%);
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: $transform-start;
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  animation: slideIn $duration $transition-ease forwards;
+}
+
+// Hover Effects
+@mixin hover-lift {
+  transition: transform $transition-speed $transition-ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+@mixin hover-grow {
+  transition: transform $transition-speed $transition-ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin hover-glow($color: $accent-color) {
+  transition: all $transition-speed $transition-ease;
+  
+  &:hover {
+    box-shadow: 0 0 15px rgba($color, 0.5);
+  }
+}
+
+// Buttons
 @mixin button-base {
-  padding: $spacing-small $spacing-medium;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-md;
   border: none;
-  border-radius: 4px;
+  border-radius: $border-radius-md;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
   cursor: pointer;
-  @include transition;
+  transition: all $transition-speed $transition-ease;
   
   &:hover {
     transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: $gradient-primary;
+  color: $background-color;
+  
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
+
+@mixin button-accent {
+  @include button-base;
+  background: $gradient-accent;
+  color: $background-color;
+  
+  &:hover {
+    background: darken($accent-color, 10%);
+  }
+}
+
+// Cards
+@mixin card {
+  background: $background-color;
+  border-radius: $border-radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-md;
+  transition: transform $transition-speed $transition-ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// WhatsApp Button
+@mixin whatsapp-button {
+  @include button-base;
+  position: fixed;
+  bottom: $spacing-md;
+  right: $spacing-md;
+  background-color: #25D366;
+  color: white;
+  border-radius: $border-radius-full;
+  padding: $spacing-sm $spacing-lg;
+  z-index: 1000;
+  box-shadow: $shadow-lg;
+  
+  i {
+    margin-right: $spacing-xs;
+    font-size: 1.2em;
+  }
+  
+  &:hover {
+    background-color: darken(#25D366, 10%);
+    transform: scale(1.05);
+  }
+  
+  @include mobile {
+    padding: $spacing-sm;
+    border-radius: $border-radius-full;
+    
+    span {
+      display: none;
+    }
+    
+    i {
+      margin: 0;
+      font-size: 1.5em;
+    }
+  }
+}
+
+// Section Headers
+@mixin section-header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+  
+  h2 {
+    font-family: $font-family-secondary;
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: $spacing-sm;
+    
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+  
+  p {
+    color: $dark-gray;
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
