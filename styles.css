@@ -1,9 +1,9 @@
 /* Variables y reset */
 :root {
-    --primary-color: #FFCDB2;     /* Magenta fuerte */
-    --secondary-color: #FFB4A2;   /* Rosa suave */
-    --accent-color: #E5989B;      /* Amarillo dorado */
-    --text-color: #B5828C;
+    --primary-color: #EB5A3C;     /* Magenta fuerte */
+    --secondary-color: #DF9755;   /* Rosa suave */
+    --accent-color: #E7D283;      /* Amarillo dorado */
+    --text-color: #EDF4C2;
     --light-bg: #FFF5F6;         /* Fondo rosa muy suave */
     --background-color: #FFF5F6;
 }
@@ -61,7 +61,7 @@ nav {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    background: url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,7 +266,7 @@ section h2 {
 .contact {
     padding: 4rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, var(--background-color) 0%, var(--accent-color) 100%);
+    background: var(--background-color);
 }
 
 .contact-container {
